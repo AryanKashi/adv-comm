@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADV COMM Mastery Quiz Hub (50 Questions)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <span class="brand-icon">⚡</span>
+        <div>
+          <h1 class="brand-title">ADV COMM Quiz Hub</h1>
+          <p class="brand-subtitle">50 Interactive Questions • Anime Chronicles Edition</p>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">Progress:</span>
+          <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Submitted:</span>
+          <span id="answeredCount" class="stat-val">0 / 50</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Score:</span>
+          <span id="scoreDisplay" class="stat-val">0 pts</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="main-wrapper">
+    
+    <!-- Left: Single Question Display & Submission -->
+    <section class="question-panel">
+      
+      <div class="card question-card">
+        <div class="question-meta">
+          <span id="qIndexBadge" class="badge-index">Question 1 of 50</span>
+          <div class="tags-group">
+            <span id="qModuleTag" class="tag-module">Module 1</span>
+            <span id="qSourceTag" class="tag-source">📖 Introduction 1.pptx</span>
+          </div>
+        </div>
+
+        <h2 id="qText" class="question-title">Loading Question...</h2>
+
+        <!-- Selectable Options (A, B, C, D) -->
+        <div id="optionsContainer" class="options-list">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="controls-row">
+          <div class="nav-buttons">
+            <button id="prevBtn" class="btn btn-secondary">◀ Previous</button>
+            <button id="nextBtn" class="btn btn-secondary">Next ▶</button>
+          </div>
+          <button id="submitBtn" class="btn btn-primary btn-disabled" disabled>Select an Option</button>
+        </div>
+      </div>
+
+      <!-- Explanation Panel (Reveals on Submit) -->
+      <div id="explanationBox" class="explanation-card hidden">
+        <div id="expVerdict" class="explanation-verdict verdict-correct">🎉 CORRECT ANSWER</div>
+        <div id="expAnswerText" class="exp-answer"></div>
+        <div id="expDetailText" class="exp-detail"></div>
+        <div id="expAnimeNote" class="exp-anime"></div>
+      </div>
+
+    </section>
+
+    <!-- Right: Question Palette / Number Grid -->
+    <aside class="sidebar-panel">
+      <div class="palette-box">
+        <div class="palette-header">
+          <div class="palette-title">
+            <span>Question Palette</span>
+            <span style="font-size:0.85rem; color:var(--accent-cyan);">1 – 50</span>
+          </div>
+          <div class="palette-legend">
+            <div class="legend-item"><span class="dot dot-active"></span> Active</div>
+            <div class="legend-item"><span class="dot dot-unvisited"></span> Unanswered</div>
+            <div class="legend-item"><span class="dot dot-correct"></span> Correct</div>
+            <div class="legend-item"><span class="dot dot-incorrect"></span> Incorrect</div>
+          </div>
+        </div>
+
+        <!-- 50 Numbered Badges (Clickable) -->
+        <div id="paletteGrid" class="palette-grid">
+          <!-- 1 to 50 generated via app.js -->
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
